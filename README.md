@@ -1,4 +1,4 @@
 # JavaBlocoUm
 Exercícios de Logica realizados no Java.
-Programação Sequencial
-Laços de Repetição
+* Programação Sequencial;
+*  Laços Condicionais;
