@@ -1,32 +1,28 @@
+package Exercicios;
+
 import java.util.Scanner;
 
 public class Exercicio3 {
 	
-	public static void main (String[] args) {
+public static void main(String[] args) {
 		
 		Scanner ler = new Scanner(System.in);
-		 
-		int idade;
 		
-		System.out.println("Digite sua idade: ");
-		idade = ler.nextInt();
+		int idade = 0, grupo1 = 0, grupo2 = 0;
 		
-			if(idade >= 10 && idade <= 14)
-		{
-			System.out.println("Infantil");
+		while(idade <= 100) {
+			System.out.println("Digite sua idade: ");
+			idade = ler.nextInt();
+			idade++;
+			
+			if(idade <=21) {
+				grupo1= grupo1 +1;
+				System.out.println("Quantidade de pessoas com menos de 21 anos: " + grupo1);
+			}
+			else if(idade >=51 && idade<=99) {
+				grupo2 = grupo2 + 1;
+				System.out.println("Quantidade de pessoas com mais de 50 anos: " + grupo2);
+			}
 		}
-			else if(idade >= 15 && idade <= 17)
-		{
-			System.out.println("Juvenil");
-		}
-			else if(idade >= 18 && idade <= 25)
-		{
-			System.out.println("Adulto");
-		}
-			else
-		{
-			System.out.println("Idade não identificada.");
-		}
-	ler.close();
-		}
+	}
 }

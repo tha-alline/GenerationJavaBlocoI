@@ -1,33 +1,70 @@
+package Exercicios;
+
 import java.util.Scanner;
-import  java.lang.Math;
 
 public class Exercicio4 {
-	
+
 	public static void main(String[] args) {
 		
 		Scanner ler = new Scanner(System.in);
 		
-		int numero;
-		double divisao=0.0, resto, quadrado, raiz;
+		int idade, sexo, fp, numpessoas = 0, contpc = 0, contmn = 0, 
+			contha = 0, contpn40 = 0, contpc18 = 0, contoc = 0;
 		
-		System.out.println("Digite um número: ");
-		numero = ler.nextInt();
-		
-		divisao = numero / 2;
-		resto = numero % 2;
-
-		if(resto != 0)
-		{
-			quadrado= numero*numero;
-			System.out.println("O número escolhido é impar e o quadrado dele é: " + quadrado);
+		while(numpessoas<=150) {
+			System.out.println("Digite sua idade: ");
+			idade = ler.nextInt();
+			
+			while(idade<=0 || idade >=130) {
+				System.out.println("Você provavelmente digitou sua idade errada!");
+				System.out.println("Favor entrar com a idade correta: ");
+				idade = ler.nextInt();
+			}
+			
+			System.out.println("Digite o sexo 1 - Feminino | 2 - Masculino | 3 - Outros: ");
+			sexo = ler.nextInt();
+			
+			while(sexo < 1 || sexo > 3) {
+				System.out.println("Digite o número correspondente ao sexo.");
+				System.out.println("1 - Feminino | 2 - Masculino | 3 - Outros: ");
+				sexo = ler.nextInt();
+			}
+			
+			System.out.println("Entre com o Fator Psicológico.");
+			System.out.println("1 - Calma | 2 - Nervosa | 3 - Agressiva: ");
+			fp = ler.nextInt();
+			
+			while(fp < 1 || fp > 3) {
+				System.out.println("Favor digitar um dos números abaixo.");
+				System.out.println("1 - Calma | 2 - Nervosa | 3 - Agressiva: ");
+				fp = ler.nextInt();
+			}
+			if(fp ==1) {
+				contpc++;
+			}
+			if(sexo == 1 && fp == 2) {
+				contmn++;
+			}
+			if(sexo == 2 && fp == 3) {
+				contha++;
+			}
+			if(sexo == 3 && fp == 1) {
+				contoc++;
+			}
+			if(fp == 2 && idade > 40) {
+				contpn40++;
+			}
+			if(fp == 1 && idade < 18) {
+				contpc18++;
+			}
+			numpessoas++;	
 		}
-		
-		else{
-			raiz = Math.sqrt (numero);
-			System.out.println("O número escolhido é par e sua raiz é: " + raiz);
-		}
-	
 		ler.close();
+		System.out.println("Pessoas Calmas: " + contpc);
+		System.out.println("Mulheres Nervosas: " + contmn);
+		System.out.println("Homens Agressivos: " + contha);
+		System.out.println("Outros Calmos: " + contoc);
+		System.out.println("Pessoas com + de 40 anos Nervosas: " + contpn40);
+		System.out.println("Pessoas com - de 18 anos Calmas: " + contpc18);
 	}
-
 }

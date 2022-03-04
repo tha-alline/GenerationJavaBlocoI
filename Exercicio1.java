@@ -1,35 +1,20 @@
-import java.util.Scanner;
+package Exercicios;
 
 public class Exercicio1 {
-	
-	public static void main (String args[])
-	
-	{ Scanner ler = new Scanner (System.in);
-	int N1, N2, N3;
-	
-	System.out.println("Digite o primeiro número: ");
-	N1 = ler.nextInt();
-	
-	System.out.println("Digite o segundo número: ");
-	N2 = ler.nextInt();
-	
-	System.out.println("Digite o terceiro número: ");
-	N3 = ler.nextInt();
-	
-		if(N1>=N2 && N2>=N3)
-	{
-		System.out.println("O maior número é: "+N1);
+		
+	public  static  void  main ( String [] args ) {
+			
+			int n, div, resto;
+			
+			for (n =  1000; n <=  1999; n ++ ) {
+				div = n /  11;
+				resto = n %  11;
+				
+				if (resto ==  5 ) 
+				{
+					System.out.println( " O número " +n +" dividido por 11 tem resto igual a 5");
+				}
+
+			}
 	}
-	
-		if (N2>=N3 && N2>=N1)
-	{
-		System.out.println("O maior número é: "+ N2);
-	}
-	
-		if (N3>=N2 && N3>=N1)
-	{
-		System.out.println("O maior número é: "+N3);
-	}
-	
-	}
-}
+}	

@@ -1,50 +1,28 @@
+package Exercicios;
+
 import java.util.Scanner;
 
 public class Exercicio2 {
-	
-	public static void main (String[] args) 
-	{
-		Scanner ler = new Scanner(System.in);
-		int a,b,c;
-		
-		System.out.println("Digite seu primeiro número"
-				+ ": ");
-		a = ler.nextInt();
-		
-		System.out.println("Digite seu segundo número: ");
-		b = ler.nextInt();
-		
-		System.out.println("Digite seu terceiro número:");
-		c = ler.nextInt();
 
-		if(a<=b && b<=c)
-		{
-			System.out.println("\nOrdem crescente: "+a+", "+b+" e "+c);
+	public  static  void  main ( String [] args ) {
+		 Scanner ler = new Scanner (System.in);
+		 
+		 int n, resto, divisão;
+			
+			for (n =  0 ; n <=  10; n ++ ) {
+				System.out.println( " Digite um número: " );
+				n = ler .nextInt();
+				
+				divisão = n /  2 ;
+				resto = n %  2 ;
+				
+				if (resto ==  0 ) {
+					System.out.println( " Este número é par! " );
+				} 
+				else {
+					System.out.println( " Este número é impar! " );
+				}
+			}
 		}
-		
-		else if(a<=c && c<=b)
-		{
-			System.out.println("\nOrdem crescente: "+a+", "+c+" e "+b);
-		}
-		
-		else if(b<=a &&a<=c)
-		{
-			System.out.println("\nOrdem crescente: "+b+", "+a+" e "+c);
-		}
-		
-		else if(b<=c &&c<=a)
-		{
-			System.out.println("\nOrdem crescente: "+b+", "+c+" e "+a);
-		}
-		
-		else if(c<=a &&a<=b)
-		{
-			System.out.println("\nOrdem crescente: "+c+", "+a+" e "+b);
-		}
-		
-		else
-		{
-			System.out.println("\nOrdem crescente: "+c+", "+b+" e "+a);
-		}
-	}
 }
+	
